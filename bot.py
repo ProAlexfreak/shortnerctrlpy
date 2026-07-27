@@ -1,5 +1,8 @@
 from pyrogram import Client
+
 from config import API_ID, API_HASH, BOT_TOKEN
+
+from handlers.start import register
 
 app = Client(
     "MultiShortenerBot",
@@ -8,6 +11,8 @@ app = Client(
     bot_token=BOT_TOKEN
 )
 
-if __name__ == "__main__":
-    print("🚀 Multi Shortener Bot Started!")
-    app.run()
+register(app)
+
+print("✅ Bot Started Successfully!")
+
+app.run()
